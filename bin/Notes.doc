@@ -461,8 +461,13 @@ You must override clone() method from Object class.
 **deep copy & shallow copy in cloning**
 
 
+***********************************************************************************************
+***********************************************************************************************
+
 ###################  Multi Threading And Concurrency ###############
 https://howtodoinjava.com/java-concurrency-tutorial/
+
+System.out.println(Runtime.getRuntime().availableProcessors());  // Available number of processor
 
 Concurrency is the ability to run several programs or several parts of a program in parallel.
 Completing task much before in time in comparison to sequential processing.
@@ -472,21 +477,87 @@ Completing task much before in time in comparison to sequential processing.
 2 ) Two threads working with shared data
 MainThread2.java -> Counter variable share between multiple threads 
 
-Thread Safety:
+******Thread Safety:
 A piece of code is thread-safe if it only manipulates 
 shared data structures in a manner that guarantees safe execution by multiple threads at the same time.
 A class is thread-safe when it continues to behave correctly when accessed from multiple threads.
 
-Concurrency vs. parallelism
+******Concurrency vs. parallelism
 Concurrency : Multiple task in over lapping time
 Parrellism : eg: sorting ( It processes multiple sub-tasks of a task in multi-core CPU at same time.)
 Concurrency is the composition of independently executing processes, (logging data in database)
 while parallelism is the simultaneous execution of (possibly related) computations.(parallel sorting)
 Concurrency is about dealing with lots of things at once. Parallelism is about doing lots of things at once.
 
-The synchronized keyword can be use with –
-A code block ( Using lock object )
-B method
+******The synchronized keyword can be use with –
+A) code block ( Using lock object )
+B) method
+MainThread3_SyncInBlockWithLockObject.java
+******object-vs-class-level-locking
+https://howtodoinjava.com/java/multi-threading/object-vs-class-level-locking/
+Object level lock  : non-static method or non-static code block 
+class level lock  : Static method or static block (Single ton class )
+
+**Classlevel sync on method
+public static AuParamDao getInstance() {
+		if(instance==null) {
+			synchronized (AuParamDao.class) {
+				if(instance==null) {
+					instance = new AuParamDao();
+				}
+			}
+		}
+		return instance;
+	}
+	
+***Sync with shared object	 (point no 10)
+create a new private scoped Object instance (private Object lock = new Object())
+OR
+ lock on the shared variable itself which we want to protect. 
+private static Cache<String,ServizioEsterno> serviziEsterni=CacheFactory.getInstance(ServiziEsterniGateway.class).getCacheInstance(cacheInfo);
+synchronized (serviziEsterni) {
+//code
+}	
+
+Executor framework::https://howtodoinjava.com/java/multi-threading/executor-framework-tutorial/
+https://www.youtube.com/watch?v=mGjlWrhhNF0&list=PLZkgjBpLveVTz629oAvG5_N7RRc0kLX1Y
+It is used to run the Runnable objects without creating new threads every time and
+ mostly re-using the already created threads. 
+--- Manage number of threads that can be executed concurrently
+
+In28Mins:::
+1) ExecuterServiceSingleThreadMain.java
+Executors.newSingleThreadExecutor(); -> Runs one thread at time
+Only when task 1 is completed .. task 2 will start..
+
+The shutdown() method doesn't cause immediate destruction of the ExecutorService. It will make the 
+ExecutorService stop accepting new tasks and shut down after all running threads finish their current work:
+
+
+2)Customizing number of thread #ExecuterServiceMultiThreadMain.java
+Just like queueing ....
+Executors.newFixedThreadPool(3); // runs 3 threads at time
+Once one of the 3 threads are completed (now only two active thread), so the fourth thread is taken for execution
+
+Callable -> Has return value //  es.submit(t0); -> return Future
+Runnable -> Has no return value // es.execute(t0);
+
+3)ESCallableFutureMain.java
+Callable return a Future object
+// Once f5 value is fetched ... Main thread execution is proceeded ( next line
+// is printed)
+//This will wait for the f5 to complete
+System.out.println("** Result ** " + f5.get());
+
+4)ESCallableFutureListsMain.java
+es.invokeAll(cl) -> return list of future
+es.invokeAny(c1) -> return first completed thread future
+
+
+***********************************************************************************************
+***********************************************************************************************
+
+
 
 ########Before Interview
 1)jdk vs jre vs jvm

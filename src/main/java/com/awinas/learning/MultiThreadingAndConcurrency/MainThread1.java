@@ -1,5 +1,6 @@
 package com.awinas.learning.MultiThreadingAndConcurrency;
 
+
 public class MainThread1 {
 
 	public static void main(String[] args) throws InterruptedException {
@@ -34,7 +35,7 @@ public class MainThread1 {
 		l = System.currentTimeMillis();
 		System.out.println(l);
 		p1.show("### Hi ###");
-		p1.show("### Hello ###");
+		p2.show("### Hello ###");
 		System.out.println("Without threading ......");
 		System.out.println(System.currentTimeMillis() - l + " Sec");
 	}
