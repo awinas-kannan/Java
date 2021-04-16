@@ -22,7 +22,7 @@ public class ExecuterServiceMultiThreadMain {
 		es.execute(new RunnableTask(6));
 		es.execute(new RunnableTask(7));
 
-		// This code will be executed bofore thread completion itself
+		// This code will be executed before thread completion itself
 		System.out.println("After executer service codes ");
 
 		// this is to stop the execution of executer service once all threads are

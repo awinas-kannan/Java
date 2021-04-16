@@ -2,6 +2,9 @@ package com.awinas.learning.Java8.streams;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Streamz {
@@ -21,8 +24,16 @@ public class Streamz {
 		for (int i = 1; i < 10; i++) {
 			list.add(i);
 		}
+		list.add(null);
+		list.add(444);
+		list.add(null);
 		Stream<Integer> stream = list.stream();
+		// System.out.println(stream.);
+
 		System.out.println(stream.count());
+
+//		 Supplier<Stream<Integer>> ints =  () -> Stream.of(stream`);
+//		 ints.get().findAny();
 
 	}
 

@@ -15,6 +15,7 @@ import java.util.stream.Stream;
 public class StreamIntermediateOperation extends MyList {
 	static Comparator<String> comparator;
 
+	static int x;
 	public static void main(String[] args) {
 
 		System.out.println("*****  Filter *****");
@@ -113,7 +114,20 @@ public class StreamIntermediateOperation extends MyList {
 		System.out.println("\n ***** skip *****");
 
 		list.stream().skip(5).forEach(e -> System.out.println(e));
+		
+		
+		list.stream().skip(2).forEach(e -> {
+			System.out.println(e);
+			inc();
+		}
+		);
+		
+		System.out.println("x val " + x);
 
+	}
+	
+	static void inc() {
+		x++;
 	}
 
 }

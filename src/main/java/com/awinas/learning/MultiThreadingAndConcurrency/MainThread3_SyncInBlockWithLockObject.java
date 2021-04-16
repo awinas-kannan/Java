@@ -19,6 +19,11 @@ public class MainThread3_SyncInBlockWithLockObject {
         };
        
         new Thread(r, "ONE").start();
+        
+        //This below thing will be executed only after thread 
+        //beacuse both uses same lock object
+        //Thread one is locked
+        //So thread two cant access that
         new Thread(r, "TWO").start();
 	}
 

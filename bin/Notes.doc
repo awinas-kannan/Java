@@ -554,6 +554,10 @@ es.invokeAll(cl) -> return list of future
 es.invokeAny(c1) -> return first completed thread future
 
 
+Deadlock :: //https://www.tutorialspoint.com/java/java_thread_deadlock.htm#:~:text=Deadlock%20occurs%20when%20multiple%20threads,associated%20with%20the%20specified%20object.
+Deadlock describes a situation where two or more threads are blocked forever, waiting for each other. 
+Deadlock occurs when multiple threads need the same locks but obtain them in different order. 
+
 ***********************************************************************************************
 ***********************************************************************************************
 
