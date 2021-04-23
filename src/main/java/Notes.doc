@@ -335,7 +335,7 @@ Cannot be over ridden. So no problem
 <<<<Other Oops concepts>>>
 https://howtodoinjava.com/java/oops/association-aggregation-composition/
 ######Association
-->objects have an independent lifecycle {Two object are in dependent of each other}
+->objects have an independent lifecycle {Two object are independent of each other}
 ->Mutliple student for single teacher // Single student for many teacher
 -> if the student leave the school , we dont need to delete teacher and vice versa...
 
@@ -419,8 +419,8 @@ while another thread is traversing it through an Iterator using hasNext() or nex
 the iterator fails quickly by throwing ConcurrentModificationExceptiom
 
 Iterator on ArrayList, HashMap classes are some examples of fail-fast Iterator.
-Iterators on Collections from java.util.concurrent package s
-uch as ConcurrentHashMap, CopyOnWriteArrayList, etc. are Fail-Safe in nature.
+Iterators on Collections from java.util.concurrent package 
+such as ConcurrentHashMap, CopyOnWriteArrayList, etc. are Fail-Safe in nature.
 
 
 
@@ -560,7 +560,62 @@ Deadlock occurs when multiple threads need the same locks but obtain them in dif
 
 ***********************************************************************************************
 ***********************************************************************************************
+<<<<<<<<<<<Strings -> String buffer vs String builder
+https://www.journaldev.com/538/string-vs-stringbuffer-vs-stringbuilder
+StringBuffervsStringBuilder.java
+String Buffer : Thread safe / slow / sync
+String Builder : Not Thread safe / Fast / Non-sync
 
+Since String is immutable in Java, whenever we do String manipulation like concatenation, substring, etc. 
+it generates a new String and discards the older String for garbage collection.
+
+These are heavy operations and generate a lot of garbage in heap.
+ So Java has provided StringBuffer and StringBuilder classes that should be used for String manipulation.
+
+StringBuffer and StringBuilder are mutable objects in Java.
+
+If you are in a single-threaded environment or don’t care about thread safety, 
+you should use StringBuilder. Otherwise, use StringBuffer for thread-safe operations.
+
+It’s clear that StringBuilder performs better than StringBuffer even in the case of a single-threaded environment.
+This difference in performance can be caused by synchronization in StringBuffer methods.
+
+
+***********************************************************************************************
+Exception Handling :
+
+//https://www.javatpoint.com/exception-handling-in-java
+//https://howtodoinjava.com/java/exception-handling/checked-vs-unchecked-exceptions-in-java/
+
+
+The Exception Handling in Java is one of the powerful mechanism to handle the runtime errors so that normal flow
+of the application can be maintained.
+
+We have two choices when an exception object is created in our application.
+
+1)Either we will handle it within method
+2)Or we can pass it to the caller method to let it handle
+
+RunTime Exception: (Unchecked Exception)
+Arithmetic Exception
+Nullpointer Exception
+ClassCast exception
+Numberformat Exception
+Index out of bound Exception (Array Index , String Index)
+
+1) Checked Exception
+Java forces you to handle these error scenarios in some manner in your application code. 
+They will come immediately into your face, once you start compiling your program
+The classes which directly inherit Throwable class except RuntimeException and Error are known as 
+checked exceptions e.g. IOException, SQLException etc. Checked exceptions are checked at compile-time.
+
+2) Unchecked Exception
+The classes which inherit RuntimeException are known as unchecked exceptions e.g. ArithmeticException, 
+NullPointerException, ArrayIndexOutOfBoundsException etc. 
+***Unchecked exceptions are not checked at compile-time, but they are checked at runtime.***
+
+3) Error
+Error is irrecoverable e.g. OutOfMemoryError, VirtualMachineError, AssertionError etc
 
 
 ########Before Interview

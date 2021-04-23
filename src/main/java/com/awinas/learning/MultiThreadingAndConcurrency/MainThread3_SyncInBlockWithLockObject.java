@@ -11,7 +11,7 @@ public class MainThread3_SyncInBlockWithLockObject {
             public void run() 
             {
                 try {
-                    mathClass.printNumbers(3);
+                    mathClass.printNumbers(5);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

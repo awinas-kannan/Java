@@ -19,8 +19,8 @@ package com.awinas.learning.string;
 //private int hash; // Default to 0  // check hashcode() method of string
 
 //Thread safe
-//String pool is possible only bezux string is immutable
-
+//String pool is possible only becux string is immutable
+//Strings are thread safe... so i can be used in multiple threads
 public class StringImmutable {
 
 	public static void main(String[] args) {
