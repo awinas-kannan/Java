@@ -618,6 +618,73 @@ NullPointerException, ArrayIndexOutOfBoundsException etc.
 Error is irrecoverable e.g. OutOfMemoryError, VirtualMachineError, AssertionError etc
 
 
+#########Garbage collection
+https://www.geeksforgeeks.org/garbage-collection-java/
+
+*****Make the object unreachable ,so that it is considered for gc
+
+Unreachable object::
+book a = new book(); // a has a reference
+a= null; // now the new book() which is present in heap is unreachable
+
+Even though the programmer is not responsible to destroy useless objects but it is highly recommended 
+to make an object unreachable(thus eligible for GC) if it is no longer required.
+There are generally four different ways to make an object eligible for garbage collection.
+Nullifying the reference variable
+Re-assigning the reference variable
+Object created inside method
+Island of Isolation
+
+***Main objective of Garbage Collector is to free heap memory by destroying unreachable objects.
+
+JVM Automatocally runs the garbace collector program..but we dont know when it will be executed
+
+So we can request the JVM to run garbage collector by following ways:
+1) System.gc() method ( internally calls Runtime.getRuntime().gc() )
+2) Runtime.getRuntime().gc() 
+
+
+finalize() Method ::
+***present in Object class (protected void finalize() throws Throwable)
+***Called by GC not by jvm
+***The finalize() method is never invoked more than once for any given object. 
+***If an uncaught exception is thrown by the finalize() method, the exception is ignored and finalization of that object terminates.
+
+ 
+How to make objects unreachable ??
+
+An object is eligible to be garbage collected if its reference variable is lost from the program during execution.
+Sometimes they are also called unreachable objects 
+
+#####https://www.geeksforgeeks.org/how-to-make-object-eligible-for-garbage-collection/
+Garbage  collection ways :
+1 ) Object created inside a method (ObjectCreatedInsideAMethod.java)
+When a method is called it goes inside the stack frame. When the method is popped from the stack, 
+all its members dies and if some objects were created inside it then these objects becomes unreachable or 
+anonymous after method execution and thus becomes eligible for garbage collection
+
+Note ::
+If a method returns the object created inside it and we store this object reference by using a 
+reference-type variable than it is no longer eligible for garbage collection.
+
+
+2)Reassigning the reference variable (ReassigningTheReferenceVariable.java)
+When reference id of one object is referenced to reference id of some other object then the previous object
+has no any longer reference to it and becomes unreachable and thus becomes eligible for garbage collection
+ 
+3)Nullifying the reference variable (GarbageCollector1.java) 
+ 
+4) Anonymous object : 
+The reference id of an anonymous object is not stored anywhere. Hence, it becomes unreachable
+
+####Island of isolation
+**** Object 1 references Object 2 and Object 2 references Object 1. 
+Neither Object 1 nor Object 2 is referenced by any other object. That’s an island of isolation.
+*** Basically, an island of isolation is a group of objects that reference each other
+but they are not referenced by any active object in the application. 
+Strictly speaking, even a single unreferenced object is an island of isolation too.
+
+
 ########Before Interview
 1)jdk vs jre vs jvm
 
