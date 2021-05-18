@@ -56,6 +56,8 @@ class HashMapProcessorSync implements Runnable {
 	
 	//Block level sync with lock object
 	private void addThreadName(int i, String name) {
+	//	synchronized (HashMapProcessorSync) {
+	//	synchronized (strArr) {
 		synchronized (lock) {
 			strArr[i] = strArr[i] + ":" + name;
 		}

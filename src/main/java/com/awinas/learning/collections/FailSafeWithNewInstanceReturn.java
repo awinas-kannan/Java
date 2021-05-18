@@ -16,7 +16,6 @@ class FailSafeWithNewInstanceReturn {
 			Integer no = (Integer) itr.next();
 			System.out.println(no);
 			if (no == 8)
-
 				// This will not print,
 				// hence it has created separate copy
 				list.add(14);

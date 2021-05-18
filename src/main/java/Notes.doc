@@ -685,6 +685,31 @@ but they are not referenced by any active object in the application.
 Strictly speaking, even a single unreferenced object is an island of isolation too.
 
 
+
+***************************************************************************************************
+************************************Data structure ************************************************
+***************************************************************************************************
+https://examples.javacodegeeks.com/java-tree-example/
+**quite good for insertion & deletion operation
+Tree:
+Hierarchical order ( where ever we wanna implement hierarchical order
+we can user trees)
+Eg : Org structure , (ceo -> manager -> TL -> dev)
+
+Binary tree :: Parent having ATMOST two children
+BST (binary search tree) 
+AVL tree
+RBT tree
+
+
+Binary search tree:https://www.geeksforgeeks.org/binary-search-tree-data-structure/
+A BST is a binary tree where nodes are ordered in the following way:
+The value in the left subtree are less than the value in its parent node
+The value in the right subtree are greater than the value in its parent node
+Duplicate values are not allowed.
+
+
+
 ########Before Interview
 1)jdk vs jre vs jvm
 

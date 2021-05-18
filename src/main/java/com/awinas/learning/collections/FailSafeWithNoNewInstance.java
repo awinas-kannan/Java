@@ -33,6 +33,7 @@ public class FailSafeWithNoNewInstance {
 			map.put("SEVEN", 7);
 		}
 
+		System.out.println(map);
 		// 7 WILL BE PRINTED
 		// WE MAKE MODIFICATION IN ORIGINAL COLLECTION
 	}

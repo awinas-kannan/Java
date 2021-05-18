@@ -15,7 +15,7 @@ public class InsertionSort {
 			// Check from 0 index till Current number index
 			for (int j = 0; j < i; j++) {
 				// If Our Current number is less than any of prev number
-				// then move out cueent number to that position
+				// then move out current number to that position
 				// then shift all the number from that pos to below
 				if (arr[i] < arr[j]) {
 					shift(i, j, arr);
