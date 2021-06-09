@@ -182,7 +182,7 @@ Default constructor
 Parameterized constructor
 Private constructor-- in singleton
 
-Constructor chainging ::
+Constructor chaining ::
 Calling same class constructor
 Calling Super clas constructor
 
@@ -644,7 +644,7 @@ So we can request the JVM to run garbage collector by following ways:
 2) Runtime.getRuntime().gc() 
 
 
-finalize() Method ::
+finalize() Method :: (data count increase in static varible)
 ***present in Object class (protected void finalize() throws Throwable)
 ***Called by GC not by jvm
 ***The finalize() method is never invoked more than once for any given object. 
