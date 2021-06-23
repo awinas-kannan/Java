@@ -114,8 +114,8 @@ hashcode() Used in hashing Algorithm.. Like hashset (Which adds  unique value us
 * If two objects have the same hash code, it doesn't mean that they are equal. 
 check EqualsOverridenInStringClass.java (==)
 
-
-
+// If two objects  have the same hash code, it doesn't mean that they are equal. 
+// If two objects are equal , they must have same hashcode
 
 #####serialization / deserialization -->  https://stackoverflow.com/questions/285793/what-is-a-serialversionuid-and-why-should-i-use-it
 --- When sending an object from servlet to JSP (req.setattribute) then the object is utilized in JSP by req.getattribute and assigned to a Object
@@ -403,8 +403,9 @@ If you do both with the same collection, you shouldn't use either extends or sup
 Array List :
 Size is incremented  by 50% once reached threshold.
 
-
+###########ConcurrentModificationException
 #####"FAIL FAST"::"FAIL SAFE"
+
 https://www.geeksforgeeks.org/fail-fast-fail-safe-iterators-java/#:~:text=Iterator%20on%20ArrayList%2C%20HashMap%20classes,examples%20of%20fail%2Dfast%20Iterator.&text=This%20is%20because%2C%20they%20operate,examples%20of%20fail%2Dsafe%20Iterator.
 https://www.baeldung.com/java-fail-safe-vs-fail-fast-iterator
 
@@ -430,6 +431,29 @@ not on the original collection and that’s why they are called fail-safe iterator
 
 Enumeration are not fail fast as they used in hash table .. which are synchronized
 
+
+
+######## Ways to avoid concurrent modification exception in list
+https://www.journaldev.com/378/java-util-concurrentmodificationexception
+https://stackoverflow.com/questions/18448671/how-to-avoid-concurrentmodificationexception-while-removing-elements-from-arr
+AvoidConcurrentModificationExceptionList.java
+
+It’s clear that the concurrent modification exception is thrown when we call iterator next() function.
+ 
+1) Using temp list to remove
+2) iter.remove();
+3) Java 8 Approach -> Internally uses iterator
+
+ArrayList -> iterator -> next () -> checkForComodification
+final void checkForComodification() {
+            if (modCount != expectedModCount)
+                throw new ConcurrentModificationException();
+ }
+  
+  
+Check --> https://stackoverflow.com/questions/29723458/why-doesnt-this-code-throw-a-concurrentmodificationexception  
+*******
+
 **********************************************************************************************************
 **********************************************************************************************************
 
@@ -440,10 +464,9 @@ parallel sorting
 
 
 
-####Cloning
+####Cloning (TestCloning.java)
 https://howtodoinjava.com/java/cloning/a-guide-to-object-cloning-in-java/
-
-Original object & cloned object will have different memory address
+Original object & cloned object will have different memory address (hashcode)
 
 JVM when called for cloning, do following things:
 
@@ -459,8 +482,26 @@ You must override clone() method from Object class.
 
 
 **deep copy & shallow copy in cloning**
+In the deep copy, we create a clone which is independent of original object and making changes 
+in the cloned object should not affect original object.
 
+Clones with Immutable vs Mutable instance objects !
+*)If its immutable object (String , Integer .. ) , it do not have setter mthod
+so changing in cloned object will not affect the original object ( As while instance in 
+cloned is chnaged)
+*)If its Mutable (having setter method ) , the both original & cloned value
+will be changed.  ( This can be avoided by cloning the mutable field )
+//Check employee object commented lined
+//
+(changing the value inside the date's address ) 
 
+#####No constructor is called on the object being cloned. As a result, it is your responsibility, 
+to make sure all the members have been properly set. Also, if you are keeping track of the 
+number of objects in the system by counting the invocation of constructors, 
+you got a new additional place to increment the counter.
+
+####Check Sigleton breaking with clone ,serilizable ,reflection
+check in design patterns com.concepts.dp.creational.singletondp.destroyAndPrevent 
 ***********************************************************************************************
 ***********************************************************************************************
 
@@ -684,6 +725,83 @@ Neither Object 1 nor Object 2 is referenced by any other object. That’s an islan
 but they are not referenced by any active object in the application. 
 Strictly speaking, even a single unreferenced object is an island of isolation too.
 
+
+*********************************** SOLID PRINCIPLES*************************************************
+SRP -> tax calc.. invoice ,printer, writer, mailer
+O/c p  -> Total price car , food ,mobile , toy ( new code  becos well tested code )
+Lis sub prin ->  superclas obj = new subclass()
+Int seg pri -> Ui comp , non touch , touch ui , desk top , mobile
+Dipen inv -> 
+
+https://www.youtube.com/watch?v=vilk8A8EO7E
+*Group of Object oriented principles
+*used for writing clean , readable , maintainable code
+
+********* 1: S: Single Responsibility Principle. (SRP)
+*Each class / module in program should focus on single task
+
+Authenticaiton Module  ( Does authentication related works)
+  -> First step login in seperate class
+  -> Step 2 login in seperate class
+  -> Email related thing in seperated class
+  -> XML parsing in seperate class ( JAXB parser)
+
+
+For Example : Invoice APP
+Normal Coding:
+-> Tax calculator , invoice printer , mailer , archiever everyting present in SAME CLASS
+If any error occurs , we have to change in sample class and the size of the class grows
+
+SRP :
+-> Tax calculator , invoice printer , mailer , archiever everyting present in SEPERATE CLASS
+If any error occurs / or any new feature need to be added,we can chnage in only that particular class
+
+********* 2: O: Open-Closed Principle. (Open for Extension - Closed for modification)
+https://www.youtube.com/watch?v=dMIf_QUSe3w
+When adding new feature ,we should not modify the existing code instead we should write new code by extending
+the existing class
+
+bad :
+when you want to add a new ITEM - TOY , you have to modify the existing class
+Because of this , already existing code may create a problem
+
+Good:
+new Toy class is added which extends product class
+
+Existing code is not changed... New code is written
+
+
+********* 3: L: Liskov Substitution Principle.
+This principle defines that , Object of superclass can be replaced with object of subclass
+without breaking the application.
+
+Super class object replaced by sub class object
+
+//Code reusablity
+//reduced coupling
+//Easier maintainance
+
+
+********* 4: I: Interface Segregation Principle.
+While defining interface ,, it should have only those methods that the client need..
+
+Seggregating interface in such a way that , it should be fully utilized by the implementation class
+
+Un supported method are not need in classes
+
+Bad design : Internet & Intranet servlets in Authentication 
+
+********* 5: D: Dependency Inversion Principle.
+Inversion of Control:
+  -> Dipendency injection 
+       -> Field injection 
+       -> Method injection
+       -> Constructor injection
+
+When you create object inside a class , its is tightly coupled
+To make it loosely coupled , we need to create the object outside and inject into class
+
+When its tightly couple , you find difficult to write test cases
 
 
 ***************************************************************************************************

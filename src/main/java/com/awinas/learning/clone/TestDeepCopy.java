@@ -1,5 +1,6 @@
 package com.awinas.learning.clone;
 
+//Un comment the clone in both employee & department
 public class TestDeepCopy {
 
 	public static void main(String[] args) throws CloneNotSupportedException {

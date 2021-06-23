@@ -35,22 +35,28 @@ public class Employee implements Cloneable {
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
-//
-//	@Override
-//	protected Object clone() throws CloneNotSupportedException {
-//		return super.clone();
-//	}
 
-	// Modified clone() method in Employee class
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		Employee cloned = (Employee) super.clone();
-		// department clone will give the new department obj ..
-		// (Diff memory address)
-		System.out.println(cloned.getDepartment().hashCode());
-		System.out.println(cloned.getDepartment().clone().hashCode());
-		cloned.setDepartment((Department) cloned.getDepartment().clone());
-		return cloned;
+		return super.clone();
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [empoyeeId=" + empoyeeId + ", employeeName=" + employeeName + ", department=" + department
+				+ "]";
+	}
+
+	// Modified clone() method in Employee class
+//	@Override
+//	protected Object clone() throws CloneNotSupportedException {
+//		Employee cloned = (Employee) super.clone();
+//		// department clone will give the new department obj ..
+//		// (Diff memory address)
+//		System.out.println(cloned.getDepartment().hashCode());
+//		System.out.println(cloned.getDepartment().clone().hashCode());
+//		cloned.setDepartment((Department) cloned.getDepartment().clone());
+//		return cloned;
+//	}
 
 }
