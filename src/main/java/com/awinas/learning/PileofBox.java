@@ -4,23 +4,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-//Alex is given n piles of boxes of equal or unequal heights. 
-//In one step, Alex can remove any number of boxes from the pile which has the maximum height 
-//and try to make it equal to the one which is just lower than the maximum height of the stack.
-//Determine the minimum number of steps required to make all of the piles equal in height.
-
-//7 6 5  4 3 2 1
-
-//6 6 5 4 3 2 1
-
-//6 5 5 4 3 2 1
-
-//5 5 5 4 3 2 1
-
-// O(nlog(n)) +  o(n) + o(n)
-
-public class Result {
-
+public class PileofBox {
+  
+	
 	public static long pilesOfBoxes(List<Integer> boxesInPiles) {
 		long no = 0l;
 		boolean isAllOne = false;
@@ -67,3 +53,18 @@ public class Result {
 	}
 
 }
+//Alex is given n piles of boxes of equal or unequal heights. 
+//In one step, Alex can remove any number of boxes from the pile which has the maximum height 
+//and try to make it equal to the one which is just lower than the maximum height of the stack.
+//Determine the minimum number of steps required to make all of the piles equal in height.
+
+//7 6 5  4 3 2 1
+
+//6 6 5 4 3 2 1
+
+//6 5 5 4 3 2 1
+
+//5 5 5 4 3 2 1
+
+// O(nlog(n)) +  o(n) + o(n)
+
