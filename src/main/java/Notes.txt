@@ -100,7 +100,7 @@ The actual param will have the same reference..
 <<<<<<<<<<<<<<<<<HASH CODE AND EQUALS>>>>>>>>>>>>>>>>
 https://howtodoinjava.com/java/basics/java-hashcode-equals-methods/
 Equals::::
-It’s default implementation simply check the object references of two objects to verify their equality. 
+Itâ€™s default implementation simply check the object references of two objects to verify their equality. 
 By default,two objects are equal if and only if they are stored in the same memory address.
 
 
@@ -132,7 +132,7 @@ https://howtodoinjava.com/java/basics/how-to-make-a-java-class-immutable/
 https://www.journaldev.com/129/how-to-create-immutable-class-in-java
 ImmutableClass/TestMain 
 * Final class .. So that it cant be Extended
-* Don’t provide “setter” methods 
+* Donâ€™t provide â€œsetterâ€ methods 
 * Make all fields final and private
 * Special attention when having mutable instance variables
 * Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
@@ -163,10 +163,10 @@ If needed, we need to specify the default constructor explicitly to the class.
 ###Access Modifier / Access Specifier
 Refer : Java note & https://howtodoinjava.com/java/oops/java-access-modifiers/
 
-public – accessible everywhere
-protected – accessible in the same package and in sub-classes
-default – accessible only in the same package
-private – accessible only in the same class
+public â€“ accessible everywhere
+protected â€“ accessible in the same package and in sub-classes
+default â€“ accessible only in the same package
+private â€“ accessible only in the same class
 public > protected > package-private (or default) > private
 
 //A Top level class can be  either public or default
@@ -219,8 +219,8 @@ Encapsulation essentially has both i.e. information hiding and implementation hi
 Private variables and public method
 Whatever changes , Encapsulate it..
 
-Abstraction is more about ‘What‘ a class can do. [Idea] {{get and put method in MAP}}
-Encapsulation is more about ‘How‘ to achieve that functionality. [Implementation]
+Abstraction is more about â€˜Whatâ€˜ a class can do. [Idea] {{get and put method in MAP}}
+Encapsulation is more about â€˜Howâ€˜ to achieve that functionality. [Implementation]
 {{{Hashmaps logic to store using put() and retrieve using get() }}}
 ArrayList is also an example of Encapsulation.
 
@@ -258,7 +258,7 @@ One name multiple form
 2)Runtime polymorphism (dynamic binding or method overriding)
 
 operator overloading is also there, 
-e.g. “+” operator can be used to add two integers as well as concat two sub-strings.
+e.g. â€œ+â€ operator can be used to add two integers as well as concat two sub-strings.
 
 Check Overloading Rules & Overriding Rules.
 Super class : overridden method
@@ -349,7 +349,7 @@ and child objects cannot belong to another parent object.
 Ex : mobile phone and mobile battery
 
 ######Composition
-->Object don’t have an independent lifecycle, 
+->Object donâ€™t have an independent lifecycle, 
 Composition is an association represents a part of a whole relationship
 where a part cannot exist without a whole. 
 If a whole is deleted then all parts are deleted. It has a stronger relationship.
@@ -394,7 +394,7 @@ mnemonic -> Get and Put principle.
 This principle states that:
 Use an extends wildcard when you only get values out of a structure.
 Use a super wildcard when you only put values into a structure.
-And don’t use a wildcard when you both get and put.
+And donâ€™t use a wildcard when you both get and put.
 
 "PECS" is from the collection's point of view. 
 If you are only pulling items from a generic collection, it is a producer and you should use extends; 
@@ -425,9 +425,9 @@ such as ConcurrentHashMap, CopyOnWriteArrayList, etc. are Fail-Safe in nature.
 
 
 
-(Fail-Safe iterators don’t throw any exceptions if a collection is structurally modified while iterating over it. 
+(Fail-Safe iterators donâ€™t throw any exceptions if a collection is structurally modified while iterating over it. 
 This is because, they operate on the clone of the collection, 
-not on the original collection and that’s why they are called fail-safe iterators)
+not on the original collection and thatâ€™s why they are called fail-safe iterators)
 
 Enumeration are not fail fast as they used in hash table .. which are synchronized
 
@@ -438,7 +438,7 @@ https://www.journaldev.com/378/java-util-concurrentmodificationexception
 https://stackoverflow.com/questions/18448671/how-to-avoid-concurrentmodificationexception-while-removing-elements-from-arr
 AvoidConcurrentModificationExceptionList.java
 
-It’s clear that the concurrent modification exception is thrown when we call iterator next() function.
+Itâ€™s clear that the concurrent modification exception is thrown when we call iterator next() function.
  
 1) Using temp list to remove
 2) iter.remove();
@@ -530,7 +530,7 @@ Concurrency is the composition of independently executing processes, (logging da
 while parallelism is the simultaneous execution of (possibly related) computations.(parallel sorting)
 Concurrency is about dealing with lots of things at once. Parallelism is about doing lots of things at once.
 
-******The synchronized keyword can be use with –
+******The synchronized keyword can be use with â€“
 A) code block ( Using lock object )
 B) method
 MainThread3_SyncInBlockWithLockObject.java
@@ -615,10 +615,10 @@ These are heavy operations and generate a lot of garbage in heap.
 
 StringBuffer and StringBuilder are mutable objects in Java.
 
-If you are in a single-threaded environment or don’t care about thread safety, 
+If you are in a single-threaded environment or donâ€™t care about thread safety, 
 you should use StringBuilder. Otherwise, use StringBuffer for thread-safe operations.
 
-It’s clear that StringBuilder performs better than StringBuffer even in the case of a single-threaded environment.
+Itâ€™s clear that StringBuilder performs better than StringBuffer even in the case of a single-threaded environment.
 This difference in performance can be caused by synchronization in StringBuffer methods.
 
 
@@ -720,7 +720,7 @@ The reference id of an anonymous object is not stored anywhere. Hence, it become
 
 ####Island of isolation
 **** Object 1 references Object 2 and Object 2 references Object 1. 
-Neither Object 1 nor Object 2 is referenced by any other object. That’s an island of isolation.
+Neither Object 1 nor Object 2 is referenced by any other object. Thatâ€™s an island of isolation.
 *** Basically, an island of isolation is a group of objects that reference each other
 but they are not referenced by any active object in the application. 
 Strictly speaking, even a single unreferenced object is an island of isolation too.
@@ -827,6 +827,60 @@ The value in the right subtree are greater than the value in its parent node
 Duplicate values are not allowed.
 
 
+
+**************************************************************************************************************
+**********************************TIME COMPLEXIITY************************************************
+Check this below page
+https://www.baeldung.com/java-algorithm-complexity
+
+https://www.youtube.com/watch?v=cNRrJkXJ8T4
+
+The study of the performance of algorithms â€“ or algorithmic complexity â€“
+falls into the field of algorithm analysis. Algorithm analysis answers the question of how many resources, such as disk space or time, an algorithm consumes.
+
+We'll be looking at time as a resource. Typically, the less time an algorithm takes to complete, the better.
+
+What is time complexity?
+How does this input size of an algorithm affect its running time? 
+Key to understanding Big O is understanding the rates at which things can grow. 
+The rate in question here is time taken per input size.
+
+1)Constant Time Algorithms â€“ O(1)
+
+2)Logarithmic Time Algorithms â€“ O(log n)
+Calculate withLog base 2 
+If input size n = 10;
+logâ‚‚(10) = 3.322 // maximum it will take 3 to 4 iter to find the output 
+https://www.omnicalculator.com/math/log-2
+Ex : Binary search 
+
+3)Linear Time Algorithms â€“ O(n)
+
+If we say something grows linearly, 
+we mean that it grows directly proportional to the size of its inputs
+
+O(2n+1) is the same as O(n), as Big O Notation concerns itself with growth for input sizes.
+
+4)N Log N Time Algorithms â€“ O(n log n)
+Ex : Quick Sort
+
+5)Polynomial Time Algorithms â€“ O(np)
+The term polynomial is a general term which contains quadratic (n2), cubic (n3), quartic (n4), etc. functions. 
+What's important to know is that O(n2) is faster than O(n3) which is faster than O(n4), etc.
+
+6)Exponential Time Algorithms â€“ O(kn)
+these algorithms grow in proportion to some factor exponentiated by the input size.
+
+For example, O(2n) algorithms double with every additional input. So, if n = 2, 
+these algorithms will run four times; if n = 3, they will run eight times 
+(kind of like the opposite of logarithmic time algorithms).
+
+O(3n) algorithms triple with every additional input, 
+O(kn) algorithms will get k times bigger with every additional input.
+
+7)Factorial Time Algorithms â€“ O(n!)
+Ex : Combiation abcd --> Find all possibilities
+https://en.wikipedia.org/wiki/Travelling_salesman_problem 
 
 ########Before Interview
 1)jdk vs jre vs jvm
