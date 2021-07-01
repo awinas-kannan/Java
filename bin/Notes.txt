@@ -1,5 +1,3 @@
-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
-
 https://howtodoinjava.com/java/basics/java-classes-objects/
 
 Instance variables in Java are non-static variables which are defined in a class outside any method, constructor or a block
