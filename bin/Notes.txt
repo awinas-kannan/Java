@@ -1,6 +1,7 @@
 https://howtodoinjava.com/java/basics/java-classes-objects/
 
-Instance variables in Java are non-static variables which are defined in a class outside any method, constructor or a block
+Instance variables in Java are non-static variables which are defined in a class outside any method, 
+constructor or a block
 Instance variables are declared without static keyword.
 Class variables (Static variable) are declared with keyword static
 
@@ -63,7 +64,8 @@ Static Variable
 Local variable
 method args
 
-Instance variables in Java are non-static variables which are defined in a class outside any method, constructor or a block
+Instance variables in Java are non-static variables which are defined in a class outside any method, 
+constructor or a block
 Instance variables are declared without static keyword.
 Class variables (Static variable) are declared with keyword static
 Local variable are declared inside methods
@@ -123,14 +125,15 @@ check EqualsOverridenInStringClass.java (==)
 https://www.baeldung.com/java-serial-version-uid#:~:text=The%20serialVersionUID%20attribute%20is%20an,object%20of%20a%20Serializable%20class.
 
 If we don't define a serialVersionUID state for a Serializable class, 
-then Java will define one based on some properties of the class itself such as the class name, instance fields, and so on.
+then Java will define one based on some properties of the class itself such as the class name, instance fields, 
+and so on.
 This will create problem if any new field is added to class
 
 #####immutable class
 
 https://howtodoinjava.com/java/basics/how-to-make-a-java-class-immutable/
 https://www.journaldev.com/129/how-to-create-immutable-class-in-java
-ImmutableClass/TestMain 
+ImmutableClass.java/TestMain.java 
 * Final class .. So that it cant be Extended
 * Don’t provide “setter” methods 
 * Make all fields final and private
@@ -184,7 +187,7 @@ Private constructor-- in singleton
 
 Constructor chaining ::
 Calling same class constructor
-Calling Super clas constructor
+Calling Super class constructor
 
 If you want to use super() i.e. 
 super class constructor then it must be first statement inside constructor.
@@ -236,9 +239,9 @@ Ex 2:
 Decoding and Encoding password in getPwd and set pwd methods
 
 
-#####Inheritance (IS-A relationship)
-Inheritance in java (IS-A relationship) is referred to the ability where child objects inherit or acquire all the properties 
-and behaviors from parent object. 
+#####Inheritance (IS-A relationship) InheritanceMain.java
+Inheritance in java (IS-A relationship) is referred to the ability where child objects inherit 
+or acquire all the properties and behaviors from parent object. 
 In object oriented programming, inheritance is used to promote the code re-usability.
 A sub class (child class) can inherit all non-private members from super class, by default.
 
@@ -252,7 +255,7 @@ Member fields are accessed from reference type class.
 Member methods are accessed from actual instance types.
 
 
-#####Polymorphism
+#####Polymorphism PolyMain.java
 One name multiple form
 1)Compile time polymorphism (static binding or method overloading)
 2)Runtime polymorphism (dynamic binding or method overriding)
@@ -277,6 +280,7 @@ Method Overriding Rules:
 5)Cannot reduce the scope of overriding method (public to protected )
 but can be (protected to public)
 
+$$$$Child to Parent in overriding class is not possible
 
 ###### Interface vs abstract class 
 https://howtodoinjava.com/java/oops/exploring-interfaces-and-abstract-classes-in-java/
@@ -596,6 +600,7 @@ es.invokeAny(c1) -> return first completed thread future
 
 
 Deadlock :: //https://www.tutorialspoint.com/java/java_thread_deadlock.htm#:~:text=Deadlock%20occurs%20when%20multiple%20threads,associated%20with%20the%20specified%20object.
+DeadLock.java
 Deadlock describes a situation where two or more threads are blocked forever, waiting for each other. 
 Deadlock occurs when multiple threads need the same locks but obtain them in different order. 
 
@@ -623,7 +628,7 @@ This difference in performance can be caused by synchronization in StringBuffer 
 
 
 ***********************************************************************************************
-Exception Handling :
+Exception Handling :ExceptionHandler.java
 
 //https://www.javatpoint.com/exception-handling-in-java
 //https://howtodoinjava.com/java/exception-handling/checked-vs-unchecked-exceptions-in-java/
@@ -656,7 +661,7 @@ NullPointerException, ArrayIndexOutOfBoundsException etc.
 ***Unchecked exceptions are not checked at compile-time, but they are checked at runtime.***
 
 3) Error
-Error is irrecoverable e.g. OutOfMemoryError, VirtualMachineError, AssertionError etc
+Error is irrecoverable e.g. OutOfMemoryError, VirtualMachineError, AssertionError,Stackoverflow etc
 
 
 #########Garbage collection

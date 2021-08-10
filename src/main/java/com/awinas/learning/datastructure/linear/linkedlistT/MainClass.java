@@ -8,6 +8,9 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
+		LinkedList<Integer> newList = new LinkedList<>();
+		
+		
 		LinkedList<String> list = new LinkedList<>();
 
 		list.add(0, "awinas");

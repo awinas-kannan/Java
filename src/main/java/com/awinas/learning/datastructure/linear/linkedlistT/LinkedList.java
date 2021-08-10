@@ -9,6 +9,8 @@ public class LinkedList<T> {
 	Node<T> head;
 	Node<T> tail;
 	int size = 0;
+	
+	 
 
 	public void add(T data) {
 		Node<T> newNode = new Node<>();
@@ -108,6 +110,23 @@ public class LinkedList<T> {
 		}
 
 	}
+	
+	//size = 10
+	//5
+	//10 -5 = 5
+	//Fast & SlowPointer
+	
+	///count 
+	//icg //institional clients
+	//basel // ccar
+	
+	
+	public T getLast(int index) {
+		index = size - index;
+		checkElementIndex(index);
+		return get(index);
+	}
+	
 
 	public void remove(int index) {
 		checkElementIndex(index);

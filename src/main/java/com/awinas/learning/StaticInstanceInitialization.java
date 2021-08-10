@@ -3,7 +3,7 @@ package com.awinas.learning;
 public class StaticInstanceInitialization extends ParentInstanceInit {
 
 	StaticInstanceInitialization() {
-		super(); //Bu default jvm will add if not provided
+		super(); //By default jvm will add even if not provided
 		System.out.println("Inside Constructor");
 	}
 

@@ -9,6 +9,10 @@ public class MethodOverridingRule {
 		privateMethod();
 		return a + b;
 	}
+	
+	public Integer sum(Integer a) {
+		return a;
+	}
 
 	private void privateMethod() {
 

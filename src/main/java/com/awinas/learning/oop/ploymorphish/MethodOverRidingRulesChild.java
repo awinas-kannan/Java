@@ -13,11 +13,18 @@ public class MethodOverRidingRulesChild extends MethodOverridingRule {
 //	   in overridden method.
 
 	// overriding method
+	//From NUmber to Integer
 	@Override
 	public Integer sum(Integer a, Integer b) { // Integer extends Number; so it's valid
 		return a + b;
 	}
 
+	//Integer to Number -- Not possible -- Child to parent
+//	@Override
+//	public Number sum(Integer a) {
+//		return a;
+//	}
+	
 	// 3) Above all rules, private, static and final methods can not be overridden
 	// in java in any way. As simple as that !!
 
