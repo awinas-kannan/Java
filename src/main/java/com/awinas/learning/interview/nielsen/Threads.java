@@ -1,4 +1,4 @@
-package com.niq.inter;
+package com.awinas.learning.interview.nielsen;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -35,7 +35,8 @@ public class Threads {
 	}
 
 	private static Object log(String string) {
-		retunSystem.out.println("awinas");
+		//return System.out.println("awinas");
+		return null;
 	}
 
 }

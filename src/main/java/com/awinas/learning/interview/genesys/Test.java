@@ -1,4 +1,4 @@
-package com.awi.gen;
+package com.awinas.learning.interview.genesys;
 
 import java.util.Arrays;
 import java.util.List;

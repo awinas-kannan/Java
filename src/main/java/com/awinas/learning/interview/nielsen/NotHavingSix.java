@@ -1,4 +1,4 @@
-package com;
+package com.awinas.learning.interview.nielsen;
 
 //What is the probability of an integer from 1 to 60,000 not having the digit 6
 

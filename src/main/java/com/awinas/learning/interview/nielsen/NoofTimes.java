@@ -1,4 +1,4 @@
-package com.niq.inter;
+package com.awinas.learning.interview.nielsen;
 
 import java.util.HashMap;
 import java.util.Map;

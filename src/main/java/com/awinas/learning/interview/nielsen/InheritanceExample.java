@@ -1,4 +1,4 @@
-package com.niq.inter;
+package com.awinas.learning.interview.nielsen;
 
 public class InheritanceExample {
 

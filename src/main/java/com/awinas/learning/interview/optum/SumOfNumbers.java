@@ -1,3 +1,4 @@
+package com.awinas.learning.interview.optum;
 import java.util.Arrays;
 
 public class SumOfNumbers {

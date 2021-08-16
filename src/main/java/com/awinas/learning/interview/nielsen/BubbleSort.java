@@ -1,4 +1,4 @@
-package com;
+package com.awinas.learning.interview.nielsen;
 
 import java.util.Arrays;
 
