@@ -1,7 +1,9 @@
 package com.awinas.learning.Java8.streams;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -55,6 +57,21 @@ public class StreamIntermediateOperation extends MyList {
 		memberNames.stream().map(e -> e.toUpperCase()).forEach(System.out::println);
 
 		memberNames.stream().map(mapper).forEach(System.out::println);
+		
+		//memberNames.add(null);
+		//Optional<List<String>> opStr = Optional.of(memberNames);
+		
+		memberNames.stream().filter(e -> {
+			System.out.println("Not null check " + e);
+			return e != null;
+		}).map(e -> {
+			System.out.println("Mapping " + e);
+			return Arrays.asList(e.split(""));
+		}).forEach(e -> {
+
+			int size = e.size();
+			System.out.println("List size " + size + " list " + e);
+		});
 
 		list.stream().mapToLong(e -> e.longValue()).forEach(System.out::println);
 
