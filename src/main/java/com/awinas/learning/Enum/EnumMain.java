@@ -9,6 +9,13 @@ public class EnumMain {
 		System.out.println(UserGroup.ICICI_CUSTOMER.getName());
 		System.out.println("*************************");
 		System.out.println(UserGroup.resolveGroupsByName("HDFC"));
+		UserGroup ug = UserGroup.resolveGroupsByName("HDFC");
+		System.out.println(" " + ug.name);
+		System.out.println(" " + ug.getBankname());
+		System.out.println(" " + ug.getName());
+		System.out.println(" " + ug.getChannels());
+		System.out.println("*************************");
+
 		System.out.println("*************************");
 		// System.out.println(UserGroup.resolveGroupsByName("HDFC_AWI"));
 		System.out.println("*********Order in Enum ***********");
@@ -18,7 +25,7 @@ public class EnumMain {
 		System.out.println(ug1.getName());
 
 		System.out.println("*********Comaprision ***********");
-		//True
+		// True
 		// because enums are singlton and comparable by default
 		UserGroup ug2 = UserGroup.valueOf("ICICI_CUSTOMER");
 		UserGroup ug3 = UserGroup.valueOf("ICICI_CUSTOMER");

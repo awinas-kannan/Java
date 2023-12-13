@@ -34,7 +34,7 @@ public enum UserGroup {
 		}
 	};
 
-	private String name;
+	public String name;
 	private String[] channels;
 	private int authSteps;
 

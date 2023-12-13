@@ -36,6 +36,9 @@ It is important to note that the bitwise complement of any integer N is equal to
 https://medium.com/@mirandarevans/why-does-the-twos-complement-represent-negative-numbers-244dcc327809
 
 Sum of Number from 1 to n ==  n (n+1) /2  ##can me used in find one missing number
+Eg : 1,2,3,4,6,7,8,9,10
+10*11/2 = 55
+
 
 <<<<<<<<<<<<<<<<<<<Java Data types >>>>>>>>>>>>..
 #####stack vs heap
